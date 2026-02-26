@@ -1,2 +1,2 @@
 # BookHub
-Projeto de um site para organização e avaliação de livros;
+Projeto de um site para organização e avaliação de livros.
