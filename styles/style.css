@@ -1,0 +1,82 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    background-color: #F8FAFC;
+    border:solid rgba(82, 82, 82, 0.123) 1px;
+    height: 100vh;
+    width: 280px;
+}
+
+#side-title{
+    padding: 25px 0px 5px 25px;
+    color: #1E3A8A;
+    font-size: 24px;
+    font-weight: 750;
+}
+
+#side-subtitle{
+    padding-left: 25px;
+    color: rgba(56, 56, 56, 0.856);
+    font-size: small;
+    
+}
+
+nav{
+    padding: 40px 0px 0px 20px;
+    
+}
+
+nav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-weight: 550;
+    list-style: none;
+    
+}
+
+.button{
+    transition: background-color 0.4s ease;
+    transition: color 0s ease;
+    border-radius: 8px;
+    border: 10px;
+    padding: 15px;
+    width: 85%;
+
+}
+
+.button:hover{
+    background-color: rgba(194, 194, 221, 0.61);
+    color: rgba(49, 49, 209, 0.849);
+    cursor: pointer;
+}
+
+nav li:hover{
+    background-color: rgba(194, 194, 221, 0.61);
+    color: rgba(49, 49, 209, 0.849);
+    cursor: pointer;
+}
+
+i{
+    transition: color 0s ease;
+    margin-right: 8px;    
+}
+
+li i:hover{
+    color: rgba(49, 49, 209, 0.849);
+}
+
+
+#exit{
+    display: block;
+    margin-top: auto;
+    padding: 10px;
+    border: solid rgba(82, 82, 82, 0.123) 1px;
+}
+

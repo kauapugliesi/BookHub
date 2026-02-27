@@ -4,27 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>BookHub</title>
 </head>
 <body>
 
-    <aside>
-        <h2>BookHub</h2>
-        <p>Sua biblioteca pessoal</p>
+    <aside class="side-bar">
+        <h3 id="side-title">BookHub</h3>
+        <p id="side-subtitle">Sua biblioteca pessoal</p>
         <nav>
             <ul>
-                <li>home</li>
-                <li>Favoritos</li>
-                <li>Notificações</li>
-                <li>Biblioteca</li>
-                <li>Book List</li>
+                <li class="button"><i class="fa-regular fa-house" ></i> Home</li>
+                <li class="button"><i class="fa-regular fa-heart"></i> Favoritos</li>
+                <li class="button"><i class="fa-solid fa-feather"></i>Avaliações</li>
+                <li class="button"><i class="fa-brands fa-readme"></i>Biblioteca</li>
+                <li class="button"><i class="fa-regular fa-bookmark"></i>Book List</li>
             </ul>
         </nav>
-
-        <p>Sair</p>
+        <div id="exit" >
+            <p class="button"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sair</p>
+        </div>    
     </aside>
     <main>
-        <h1>Olá, Usuário exemplo</h1>
+        <h1 id="title">Olá, Usuário exemplo</h1>
         <p>Navegue pelos livros</p>
 
         <form action="" method="get">
@@ -33,7 +38,7 @@
             </div>
         </form>
 
-        <h3>Todos os livros</h3>
+        <h4 id="main-subtitle">Todos os livros</h4>
         <p>3 livros encontrados</p>
 
 
