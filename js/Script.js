@@ -14,13 +14,13 @@ const livros = [
     {
         titulo: "1984",
         capa: "./img/images.png",
-        avaliacao: 4.7,
+        avaliacao: 4.8,
         categoria: "mais-famosos"
     },
     {
         titulo: "Café com Deus Pai",
         capa: "./img/cafe.jpg",
-        avaliacao: 4.7,
+        avaliacao: 3.7,
         categoria: "top-semana"
     },
     {
@@ -38,19 +38,19 @@ const livros = [
     {
         titulo: "Misery",
         capa: "./img/misery.jpg",
-        avaliacao: 4.7,
+        avaliacao: 4.8,
         categoria: "genero-comum"
     },
     {
         titulo: "It",
         capa: "./img/it.jpg",
-        avaliacao: 4.7,
+        avaliacao: 4.5,
         categoria: "genero-comum"
     },
     {
         titulo: "A paciente silenciosa",
         capa: "./img/paciente.jpg",
-        avaliacao: 4.7,
+        avaliacao: 4.8,
         categoria: "genero-comum"
     }
 ];
