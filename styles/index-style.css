@@ -1,0 +1,27 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-color: rgba(243, 243, 243, 0.356);
+    display: flex;
+    height: 100vh;
+}
+
+header{
+    display: flex;
+    width: 100%;
+}
+
+.header-divs{
+    border: solid black;
+    height: 200px;
+    width: 50%;
+}
+
+#banner{
+    position: relative;
+    object-fit: cover;
+}

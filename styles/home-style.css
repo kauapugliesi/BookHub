@@ -16,7 +16,7 @@ body{
     flex-direction: column;
     background-color: #b4d7fa83;
     border:solid rgba(82, 82, 82, 0.123) 1px;
-    height: 100vh;
+    height: 100%;
     width: 280px;
 }
 
