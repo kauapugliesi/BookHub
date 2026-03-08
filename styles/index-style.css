@@ -121,3 +121,23 @@ header{
     cursor: pointer;
 }
 
+@media (min-width: 1025px){
+    header{
+    background-size:
+        50% 100%,  
+        50% 100%, 
+        100% 50%,
+        100% 100%;
+    }
+
+    #container{
+    bottom: 200px;
+    }
+
+    .title{
+    font-size: 55px;
+}
+
+
+}
+

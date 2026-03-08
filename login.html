@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang=pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/login-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>BookHub</title>
+</head>
+<body>
+    <h1 id="title">BookHub</h1>
+    <h3 id="sub-title">Bem-vindo de volta</h3>
+    <p id="caption">Junte-se à nossa comunidade de leitores</p>
+    <div id="container">
+        <form id="register-form" action="home.html" method="post">
+
+        <label for="email" class="form-box">E-mail:
+            <input type="text" id="email" name="email" placeholder="exemplo@email.com" required>
+        </label>
+
+        <label for="password" class="form-box">Senha:
+            <input type="password" id="password" name="password" placeholder="(Mín 8 caracteres, 1 maiúscula, 1 número)" required>
+        </label>
+
+        <button type="submit" >Entrar</button>
+    </form>
+        <p id="result-message"></p>
+
+        <p id="register">Ainda não tem uma conta? Criar conta</p>
+    </div>
+
+    <p id="back">← Voltar para a página inicial</p>
+
+    <script src="js/login-script.js" ></script>
+    
+</body>
+</html>

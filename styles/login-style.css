@@ -1,0 +1,98 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#title{
+    color: #1E3A8A;
+}
+
+#sub-title{
+    margin-top: 10px;
+}
+
+#caption{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: rgba(56, 56, 56, 0.856);
+}
+
+#container{
+    display: block;
+    padding: 20px;
+    box-shadow:0 2px 6px rgba(0, 0, 0, 0.50);
+    border-radius: 10px;
+    width: 23%;
+}
+
+label{
+    display: block;
+    font-weight: bold;
+    font-size: small;
+    margin-bottom: 5px;
+}
+
+input{
+    display: block;
+    margin-top: 5px;
+    width: 95%;
+    padding: 8px;
+    background-color: #F3F3F5;
+    border: none;
+    border-radius: 5px;
+    transition: box-shadow 0.18s ease;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+input:focus-within {
+    border-color: rgba(49, 49, 209, 0.9);
+    box-shadow:0 0 0 1px rgba(49, 49, 209, 0.9), 0 0 0 4px rgba(2, 2, 150, 0.322);  
+}
+
+button, #register, #result-message{
+    display: block;      
+    margin: 10px auto;    
+    text-align: center;
+}
+
+button{
+    display: block;
+    margin-top: 5px;
+    width: 99%;
+    margin-top: 20px;
+    padding: 8px;
+    color: #ffffff;
+    background-color: #1E3A8A;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+#register{
+    padding: 10px;
+    font-size: small;
+}
+
+#result-message{
+    padding: 5px;
+    font-size: small;
+}
+
+#back{
+    padding: 20px;
+    font-size: small;
+}
