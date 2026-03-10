@@ -26,9 +26,11 @@ registerForm.addEventListener("submit", function(event) {
 
     if (!isValidEmail){
         resultMessage.textContent = "Email inválido !";
+        resultMessage.style.display = "block";
         resultMessage.style.color = "red"
     }else if (!isValidPassword) {
         resultMessage.textContent = "Senha inválida !";
+        resultMessage.style.display = "block";
         resultMessage.style.color = "red"
 
     }else{

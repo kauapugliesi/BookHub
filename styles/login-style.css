@@ -71,10 +71,9 @@ button, #register, #result-message{
 
 button{
     display: block;
-    margin-top: 5px;
+    cursor: pointer;
     width: 99%;
-    margin-top: 20px;
-    padding: 8px;
+    padding: 10px;
     color: #ffffff;
     background-color: #1E3A8A;
     font-weight: bold;
@@ -82,17 +81,44 @@ button{
     border-radius: 5px;
 }
 
-#register{
-    padding: 10px;
-    font-size: small;
+#login-button{
+    transition: background-color 0.7s ease;
 }
 
-#result-message{
+#login-button:hover{
+    background-color: #10214e;
+}
+
+a{
+    text-decoration: none; 
+    color: inherit;
+}
+
+#register{
+    cursor: pointer;
     padding: 5px;
     font-size: small;
 }
 
+#register:hover{
+    color: #1E3A8A;
+    transition: trasnform 0.3s ease;
+}
+
+#result-message{
+    display: none;
+    font-size: smaller;
+}
+
 #back{
+    text-decoration: none; 
+    color: inherit;
+    cursor: pointer;
     padding: 20px;
     font-size: small;
+}
+
+#back:hover {
+    color: #1E3A8A;
+    transition: trasnform 0.3s ease;
 }
