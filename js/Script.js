@@ -55,21 +55,23 @@ const livros = [
     }
 ];
 
-function criarCard(livro) {
+function criarCard(livro, id) {
     return `
-    <div class="book-card">
-      <img class="book-cover" src="${livro.capa}" alt="${livro.titulo}">
-      <h3 class="book-title">${livro.titulo}</h3>
-      <p class="book-rating">${livro.avaliacao}</p>
-    </div>
+    <a href="book.html?id=${id}">
+      <div class="book-card">
+        <img class="book-cover" src="${livro.capa}" alt="${livro.titulo}">
+        <h3 class="book-title">${livro.titulo}</h3>
+        <p class="book-rating">${livro.avaliacao}</p>
+      </div>
+    </a>
   `;
 }
 
 function renderizarLivros() {
-    livros.forEach(livro => {
+    livros.forEach((livro, index) => {
       const container = document.getElementById(livro.categoria);
-      container.innerHTML += criarCard(livro);
+      container.innerHTML += criarCard(livro, index);
     });
 }
-  
-  renderizarLivros();
+
+renderizarLivros();
