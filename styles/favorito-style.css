@@ -110,23 +110,82 @@ a{
     color: inherit;
 }
 
-.container{
+.container, .explorer{
     display: flex;
     align-items: center;
     justify-content: center;
-
     margin-top: 10px;
     padding: 20px;
     border-radius: 5px;
     border: 1px solid #e5e7eb;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
+#caption{
+    margin-right: 25%;
+}
+
 #image-sub-title{
-    flex-direction: row;
     text-align: justify;
 }
 
+#home{
+    margin-top: 10px;
+    padding: 12px 20px;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    background-color: #1E3A8A;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
 
+.book-card{
+    margin: 5px;
+    position: relative;
+    border-radius: 3px;
+    width: 130px;       
+    height: 200px;   
+    overflow: hidden; 
+    box-shadow: 0 15px 20px rgba(0, 0, 0, .15);
+}
+
+.book-card::after{
+    content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.7) 60%,
+    rgba(255,255,255,1) 100%
+  );
+}
+
+.book-cover {
+    width: 130px;       
+    height: 200px;      
+    border-radius: 3px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.caption-warning{
+    margin-right: 15%;
+}
+
+
+#books-explore{
+    margin-right: 10%;
+}
+
+#explore{
+    display: flex;
+}
 
