@@ -64,6 +64,11 @@ nav ul{
     cursor: pointer;
 }
 
+#home-button{
+    background-color: rgba(141, 141, 214, 0.61);
+    color: rgba(49, 49, 209, 0.849);
+}
+
 nav li:hover{
     background-color: rgba(141, 141, 214, 0.61);
     color: rgba(49, 49, 209, 0.849);
