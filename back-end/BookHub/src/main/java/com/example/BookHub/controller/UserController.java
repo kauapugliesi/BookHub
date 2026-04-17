@@ -25,7 +25,7 @@ public class UserController {
         return "usuário cadastrado com sucesso";
     }
 
-    @PostMapping("/register")
+    @PostMapping("/login")
     public String autentication(@RequestBody User user){
         boolean authenticated = userService.autentication(user.getEmail(), user.getPassword());
 
