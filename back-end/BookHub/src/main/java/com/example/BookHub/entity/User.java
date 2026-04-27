@@ -1,11 +1,27 @@
 package com.example.BookHub.entity;
 
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+
 public class User {
+
     private Long id;
+
+    @NotBlank(message = "Nome não informado.")
+    @Pattern(regexp = "^[A-Za-z]{3,}$")
     private String name;
+
+    @NotBlank(message = "Nome de usuário não informado.")
     private String nickame;
+
+    @NotBlank(message = "Email não informado.")
+    @Email
     private String email;
+
+    @NotBlank(message = "Senha não informada.")
+    @Pattern(regexp = "^(?=.*[A-Z])[A-Za-z0-9]{8,}$")
     private String password;
 
     public User() {
