@@ -1,74 +1,44 @@
-const email = document.querySelector("#email");
-const password = document.querySelector("#password");
 const resultMessage = document.querySelector("#result-message");
 const loginForm = document.querySelector("#login-form");
 
-const validateEmail = (email) => {
-    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return regex.test(email);
-};
-
-const validatePassword = (password) => {
-    const regex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
-    return regex.test(password);
-};
-
-loginForm.addEventListener("submit", async function(event) {
-
-    event.preventDefault();
-
-    const emailValue = email.value.trim();
-    const passwordValue = password.value.trim();
-
-    const isValidEmail = validateEmail(emailValue);
-    const isValidPassword = validatePassword(passwordValue);
-
-    if (!isValidEmail) {
-        resultMessage.textContent = "Email inválido!";
-        resultMessage.style.display = "block";
-        resultMessage.style.color = "red";
-        return;
+registerForm.addEventListener("submit", async(event) => {
+event.preventDefault();
+    const user = {
+        name: document.querySelector("#name").value,
+        nickname: document.querySelector("#nickname").value,
+        email: document.querySelector("#email").value,
+        password: document.querySelector("#password").value,
     }
 
-    if (!isValidPassword) {
-        resultMessage.textContent = "Senha inválida!";
-        resultMessage.style.display = "block";
-        resultMessage.style.color = "red";
-        return;
-    }
+    try{
 
-    const userData = {
-        email: emailValue,
-        password: passwordValue
-    };
-
-    try {
-        const response = await fetch("http://localhost:8080/users/login", {
+        const response = await fetch("http://localhost:8080/User/login", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-type": "application/json"
             },
-            body: JSON.stringify(userData)
+            body: JSON.stringify(user)
         });
 
-        const message = await response.text();
+        const data = await response.json();
 
-        resultMessage.textContent = message;
-        resultMessage.style.display = "block";
+        if(!response.ok){
+            resultMessage.style.color = "red"
 
-        if (response.ok && message.toLowerCase().includes("sucesso")) {
-            resultMessage.style.color = "green";
+            if(Array.isArray(data)){
+                resultMessage.innerHTML = data.join("<br>");
+            } else{
+                resultMessage.textContent = data.message || "Erro ao realizar login. ";
+            }
 
-            setTimeout(() => {
-                window.location.href = "home.html";
-            }, 1000);
-        } else {
-            resultMessage.style.color = "red";
+            return;
         }
 
-    } catch (error) {
-        resultMessage.textContent = "Erro ao conectar com o servidor!";
-        resultMessage.style.display = "block";
+        resultMessage.style.color = "green";
+        resultMessage.textContent = data.message || "Usuário logado com sucesso!";
+
+    } catch(erro){
         resultMessage.style.color = "red";
+        resultMessage.textContent = "Erro ao conectar com o servidor!";
     }
 });
