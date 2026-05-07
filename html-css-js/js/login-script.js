@@ -5,7 +5,7 @@ registerForm.addEventListener("submit", async(event) => {
 event.preventDefault();
     const user = {
         name: document.querySelector("#name").value,
-        nickname: document.querySelector("#nickname").value,
+        nickname: document.querySelector("#user").value,
         email: document.querySelector("#email").value,
         password: document.querySelector("#password").value,
     }
@@ -23,21 +23,26 @@ event.preventDefault();
         const data = await response.json();
 
         if(!response.ok){
+            resultMessage.style.display = "block";
             resultMessage.style.color = "red"
 
             if(Array.isArray(data)){
+                resultMessage.style.display = "block";
                 resultMessage.innerHTML = data.join("<br>");
             } else{
+                resultMessage.style.display = "block";
                 resultMessage.textContent = data.message || "Erro ao realizar login. ";
             }
 
             return;
         }
 
+        resultMessage.style.display = "block";
         resultMessage.style.color = "green";
         resultMessage.textContent = data.message || "Usuário logado com sucesso!";
 
     } catch(erro){
+        resultMessage.style.display = "block";
         resultMessage.style.color = "red";
         resultMessage.textContent = "Erro ao conectar com o servidor!";
     }
