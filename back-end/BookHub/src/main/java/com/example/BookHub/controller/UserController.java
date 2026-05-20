@@ -2,7 +2,11 @@ package com.example.BookHub.controller;
 
 import com.example.BookHub.entity.User;
 import com.example.BookHub.service.UserService;
+import org.apache.coyote.Response;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpClientErrorException;
 
 @RestController
 @RequestMapping("/users")
@@ -16,24 +20,24 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String register(@RequestBody User user) {
+    public ResponseEntity<String> register(@RequestBody User user) {
         if(userService.emailExists(user.getEmail())){
-            return "email já cadastrado";
+            return ResponseEntity.badRequest().body("email já cadastrado");
         }
 
         userService.register(user);
-        return "usuário cadastrado com sucesso";
+        return ResponseEntity.ok("usuário cadastrado com sucesso");
     }
 
     @PostMapping("/login")
-    public String autentication(@RequestBody User user){
-        boolean authenticated = userService.autentication(user.getEmail(), user.getPassword());
+    public ResponseEntity<String> authentication(@RequestBody User user){
+        boolean authenticated = userService.authentication(user.getEmail(), user.getPassword());
 
         if (authenticated) {
-            return "Login realizado com sucesso";
+            return ResponseEntity.ok("Login realizado com sucesso");
         }
 
-        return "E-mail ou senha inválidos";
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("E-mail ou senha inválidos");
     }
 
 

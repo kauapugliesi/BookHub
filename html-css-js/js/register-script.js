@@ -13,7 +13,7 @@ const user = {
 
 try{
 
-    const response = await fetch("http://localhost:8080/User/register", {
+    const response = await fetch("http://localhost:8080/users/register", {
         method: "POST",
         headers: {
             "Content-type": "application/json"
