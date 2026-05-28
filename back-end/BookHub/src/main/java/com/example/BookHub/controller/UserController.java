@@ -2,6 +2,7 @@ package com.example.BookHub.controller;
 
 import com.example.BookHub.entity.User;
 import com.example.BookHub.service.UserService;
+import jakarta.validation.Valid;
 import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +31,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> authentication(@RequestBody User user){
+    public ResponseEntity<String> authentication(@Valid @RequestBody User user){
         boolean authenticated = userService.authentication(user.getEmail(), user.getPassword());
 
         if (authenticated) {

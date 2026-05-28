@@ -6,7 +6,7 @@ event.preventDefault();
 
 const user = {
     name: document.querySelector("#name").value,
-    user: document.querySelector("#user").value,
+    nickame: document.querySelector("#user").value,
     email: document.querySelector("#email").value,
     password: document.querySelector("#password").value,
 };
@@ -24,19 +24,18 @@ try{
     const data = await response.json();
 
     if(!response.ok){
-        resultMessage.style.display = "block";
-        resultMessage.style.color = "red"
 
-        if(Array.isArray(data)){
-            resultMessage.style.display = "block";
-            resultMessage.innerHTML = data.join("<br>"); //mais de uma resposta, junta em uma só e separa pela quebra
-        }else{
-            resultMessage.style.display = "block";
-            resultMessage.textContent = data.message || "Erro ao cadastrar usuário.";
-        }
+    resultMessage.style.display = "block";
+    resultMessage.style.color = "red";
 
-        return;
-    } 
+    const data = await response.text();
+
+    console.log(data);
+
+    resultMessage.textContent = data;
+
+    return;
+}
 
     resultMessage.style.display = "block";
     resultMessage.style.color = "green";

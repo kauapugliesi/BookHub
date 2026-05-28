@@ -14,7 +14,7 @@ body{
     display: flex;
     position: fixed;
     flex-direction: column;
-    background-color: #b4d7fa83;
+    background: linear-gradient(to bottom, #4169e1 0%, #1e3a8a 50%, #0a1841 100%);
     border:solid rgba(82, 82, 82, 0.123) 1px;
     height: 100%;
     width: 280px;

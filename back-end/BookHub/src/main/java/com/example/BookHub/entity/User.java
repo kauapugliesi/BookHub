@@ -8,7 +8,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
 @Entity
-@Table
+@Table(name = "users")
 public class User {
 
     @Id
@@ -17,10 +17,11 @@ public class User {
 
     @Column(name = "user_name",nullable = false, length = 80)
     @NotBlank(message = "Nome não informado.")
-    @Pattern(regexp = "^[A-Za-z]{3,}$")
+    @Pattern(regexp = "^[A-Za-zÀ-ÿ ]{3,}$", message = "Nome inválido.")
     private String name;
 
     @Column(name = "user_nickname",nullable = false, length = 80)
+    @Pattern(regexp = "^[A-Za-zÀ-ÿ ]{3,}$")
     @NotBlank(message = "Nome de usuário não informado.")
     private String nickame;
 
