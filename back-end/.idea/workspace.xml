@@ -5,16 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="485667bc-8cfe-4f82-81c6-8d70d18e703e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/BookHub/src/main/java/com/example/BookHub/entity/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookHub/src/main/java/com/example/BookHub/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BookHub/src/main/java/com/example/BookHub/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookHub/src/main/java/com/example/BookHub/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BookHub/src/main/java/com/example/BookHub/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookHub/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/BookHub/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../html-css-js/js/Script.js" beforeDir="false" afterPath="$PROJECT_DIR$/../html-css-js/js/Script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -65,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1779921806037</updated>
       <workItem from="1779921807304" duration="5104000" />
-      <workItem from="1779995151489" duration="2041000" />
+      <workItem from="1779995151489" duration="4081000" />
     </task>
     <servers />
   </component>
