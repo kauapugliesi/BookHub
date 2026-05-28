@@ -26,10 +26,15 @@ public class UserService {
         return repository.findByEmail(email);
     }
 
-    public boolean authentication(String email, String password){
+    public User authentication(String email, String password){
         User user = repository.findByEmail(email);
 
-        return user != null && user.getPassword().equals(password);
+        if(user != null && user.getPassword().equals(password)) {
+            return user;
+
+        }
+
+        return null;
     }
 
 }

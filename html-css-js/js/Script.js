@@ -74,4 +74,11 @@ function renderizarLivros() {
     });
 }
 
+const userName = localStorage.getItem("userName");
+
+if(userName){
+    document.querySelector("#main-title")
+        .textContent = `Olá, ${userName}`;
+}
+
 renderizarLivros();

@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpClientErrorException;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/users")
 @CrossOrigin("*")
@@ -31,11 +33,14 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> authentication(@RequestBody User user){
-        boolean authenticated = userService.authentication(user.getEmail(), user.getPassword());
+    public ResponseEntity<?> authentication(@RequestBody User user){
+        User authenticated = userService.authentication(user.getEmail(), user.getPassword());
 
-        if (authenticated) {
-            return ResponseEntity.ok("Login realizado com sucesso");
+        if (authenticated != null) {
+            return ResponseEntity.ok(Map.of(
+                    "message", "Login realizado com sucesso.",
+                    "nickame", authenticated.getNickame()
+            ));
         }
 
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("E-mail ou senha inválidos");

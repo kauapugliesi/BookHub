@@ -18,7 +18,7 @@ event.preventDefault();
             body: JSON.stringify(user)
         });
 
-        const data = await response.text();
+        const data = await response.json();
 
         if(!response.ok){
             resultMessage.style.display = "block";
@@ -37,7 +37,10 @@ event.preventDefault();
 
         resultMessage.style.display = "block";
         resultMessage.style.color = "green";
-        resultMessage.textContent = data.message || "Usuário logado com sucesso!";
+        resultMessage.textContent = data.message 
+
+        localStorage.setItem("userName", data.nickame);
+
         setTimeout(() => {
             window.location.href = "home.html";
         }, 1000);
