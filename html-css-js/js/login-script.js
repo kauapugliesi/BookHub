@@ -1,18 +1,16 @@
 const resultMessage = document.querySelector("#result-message");
 const loginForm = document.querySelector("#login-form");
 
-registerForm.addEventListener("submit", async(event) => {
+loginForm.addEventListener("submit", async(event) => {
 event.preventDefault();
     const user = {
-        name: document.querySelector("#name").value,
-        nickname: document.querySelector("#user").value,
         email: document.querySelector("#email").value,
         password: document.querySelector("#password").value,
     }
 
     try{
 
-        const response = await fetch("http://localhost:8080/User/login", {
+        const response = await fetch("http://localhost:8080/users/login", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
@@ -20,7 +18,7 @@ event.preventDefault();
             body: JSON.stringify(user)
         });
 
-        const data = await response.json();
+        const data = await response.text();
 
         if(!response.ok){
             resultMessage.style.display = "block";
@@ -40,6 +38,9 @@ event.preventDefault();
         resultMessage.style.display = "block";
         resultMessage.style.color = "green";
         resultMessage.textContent = data.message || "Usuário logado com sucesso!";
+        setTimeout(() => {
+            window.location.href = "home.html";
+        }, 1000);
 
     } catch(erro){
         resultMessage.style.display = "block";

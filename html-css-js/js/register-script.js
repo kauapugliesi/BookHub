@@ -21,7 +21,7 @@ try{
         body: JSON.stringify(user)
     });
 
-    const data = await response.json();
+    const data = await response.text();
 
     if(!response.ok){
 
@@ -40,6 +40,9 @@ try{
     resultMessage.style.display = "block";
     resultMessage.style.color = "green";
     resultMessage.textContent = data.message || "Usuário cadastrado com sucesso!";
+    setTimeout(() => {
+        window.location.href = "login.html";
+    }, 1000);
 
 } catch(error){
     resultMessage.style.display = "block";

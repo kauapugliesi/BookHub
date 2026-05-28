@@ -21,7 +21,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody User user) {
+    public ResponseEntity<String> register(@Valid @RequestBody User user) {
         if(userService.emailExists(user.getEmail())){
             return ResponseEntity.badRequest().body("email já cadastrado");
         }
@@ -31,7 +31,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> authentication(@Valid @RequestBody User user){
+    public ResponseEntity<String> authentication(@RequestBody User user){
         boolean authenticated = userService.authentication(user.getEmail(), user.getPassword());
 
         if (authenticated) {

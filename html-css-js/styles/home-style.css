@@ -52,6 +52,7 @@ nav ul{
 
 .button{
     transition: background-color 0.4s ease;
+    color: rgba(255, 255, 255, 0.849);
     transition: color 0s ease;
     border-radius: 8px;
     border: 10px;
@@ -59,14 +60,14 @@ nav ul{
 }
 
 .button:hover{
-    background-color: rgba(141, 141, 214, 0.61);
+    background-color: rgba(141, 141, 214, 0.61);  
     color: rgba(49, 49, 209, 0.849);
     cursor: pointer;
 }
 
 #home-button{
-    background-color: rgba(141, 141, 214, 0.61);
-    color: rgba(255, 255, 255, 0.849);
+    background-color: rgb(150, 150, 233);
+    color: rgba(49, 49, 209, 0.849);
 }
 
 nav li:hover{

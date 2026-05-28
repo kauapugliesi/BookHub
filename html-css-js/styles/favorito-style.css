@@ -52,6 +52,7 @@ nav ul{
 
 .button{
     transition: background-color 0.4s ease;
+    color: rgba(255, 255, 255, 0.849);
     transition: color 0s ease;
     border-radius: 8px;
     border: 10px;
@@ -67,6 +68,7 @@ nav ul{
 #favorite{
     background-color: rgba(141, 141, 214, 0.61);
     color: rgba(49, 49, 209, 0.849);
+    background-color: rgb(150, 150, 233);
 }
 
 nav li:hover{
