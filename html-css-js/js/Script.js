@@ -19,11 +19,7 @@ function criarCard(livro) {
   `;
 }
 
-/**
- * 
- * @param {string} trackId 
- * @param {number} direction
- */
+
 function moveCarousel(trackId, direction) {
     const track = document.getElementById(trackId);
     if (!track) return;
@@ -43,7 +39,7 @@ function moveCarousel(trackId, direction) {
 
     let newX = carouselStates[trackId].currentX - (direction * moveAmount);
 
-    // Lógica de loop e limites
+
     if (direction === 1 && Math.abs(carouselStates[trackId].currentX) >= maxMove) {
         newX = 0;
     } else if (direction === -1 && carouselStates[trackId].currentX >= 0) {
