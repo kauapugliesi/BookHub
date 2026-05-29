@@ -39,7 +39,8 @@ public class UserController {
         if (authenticated != null) {
             return ResponseEntity.ok(Map.of(
                     "message", "Login realizado com sucesso.",
-                    "nickame", authenticated.getNickame()
+                    "nickame", authenticated.getNickame(),
+                    "id", authenticated.getId()
             ));
         }
 

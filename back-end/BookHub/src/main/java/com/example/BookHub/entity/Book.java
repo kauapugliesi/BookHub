@@ -9,7 +9,7 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
 
     @Column(name = "book_title")
     private String titulo;
@@ -39,7 +39,7 @@ public class Book {
     }
 
     public Book(Long id, String titulo, String autor, String capa, Double avaliacao, String categoria, String genero, String descricao) {
-        Id = id;
+        this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.capa = capa;
@@ -50,11 +50,11 @@ public class Book {
     }
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getTitulo() {

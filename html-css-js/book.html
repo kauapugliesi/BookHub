@@ -3,29 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/book-style.css">
+    <!-- Link para o CSS que acabamos de criar -->
+    <link rel="stylesheet" href="styles/book-details.css">
+    
+    <!-- Fontes e Ícones -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <title>BookHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <title>Detalhes do Livro | BookHub</title>
 </head>
 <body>
 
-    <img id="cover">
+    <!-- Overlay de Carregamento (Spinner) -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+    </div>
 
-    <h1 id="title"></h1>
+    <!-- Barra Lateral de Navegação -->
+    <aside class="side-bar">
+        <h3 id="side-title">BookHub</h3>
+        <p id="side-subtitle">Sua biblioteca pessoal</p>
+        <nav>
+            <ul>
+                <a href="index.html" class="button"><i class="fa-regular fa-house"></i> Home</a>
+                <a href="favoritos.html" class="button"><i class="fa-regular fa-heart"></i> Favoritos</a>
+                <a href="avaliacoes.html" class="button"><i class="fa-solid fa-feather"></i> Avaliações</a>
+                <a href="biblioteca.html" class="button"><i class="fa-brands fa-readme"></i> Biblioteca</a>
+                <a href="bookList.html" class="button"><i class="fa-regular fa-bookmark"></i> Book List</a>
+            </ul>
+        </nav>
+        <div id="exit">
+            <a href="index.html" class="button">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Sair
+            </a>
+        </div>    
+    </aside>
 
-    <p>Autor: <span id="author"></span></p>
+    <!-- Conteúdo Principal -->
+    <main class="book-details-container">
+        <header class="book-header">
+            <a href="javascript:history.back()" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Voltar para a estante
+            </a>
+        </header>
 
-    <p>Gênero: <span id="genre"></span></p>
+        <!-- Seção de Detalhes (inicialmente oculta até o JS carregar os dados) -->
+        <section id="book-content" class="book-content hidden">
+            
+            <!-- Coluna 1: Visual e Ações -->
+            <div class="book-visual">
+                <img id="cover" src="" alt="Capa do Livro">
+                <div class="book-actions">
+                    <button id="fav-btn" class="action-btn fav">
+                        <i class="fa-regular fa-heart"></i> Favoritar
+                    </button>
+                    <button class="action-btn read">
+                        <i class="fa-solid fa-book-open"></i> Lendo agora
+                    </button>
+                </div>
+            </div>
 
-    <p>Avaliação: <span id="rating"></span></p>
+            <!-- Coluna 2: Informações Textuais -->
+            <div class="book-info">
+                <h1 id="title">Carregando título...</h1>
+                <h2 id="author">por Autor</h2>
+                
+                <div class="book-meta">
+                    <span class="meta-item">⭐ <span id="rating">0.0</span></span>
+                    <span id="book-pages" class="meta-item">
+                        <i class="fa-regular fa-file-lines"></i> --- páginas
+                    </span>
+                    <span class="meta-item">
+                        <i class="fa-solid fa-tag"></i> <span id="genre">Gênero</span>
+                    </span>
+                </div>
 
-    <p id="description"></p>
+                <div class="book-description">
+                    <h3>Sinopse</h3>
+                    <p id="description">Buscando informações do livro no banco de dados...</p>
+                </div>
 
-    <Script src="js/book-script.js" ></Script>
-    
+                <!-- Informações Técnicas Extras -->
+                <div class="book-extra-info">
+                    <div class="info-box">
+                        <span class="label">Editora</span>
+                        <span id="book-publisher" class="value">-</span>
+                    </div>
+                    <div class="info-box">
+                        <span class="label">Ano de Lançamento</span>
+                        <span id="book-year" class="value">-</span>
+                    </div>
+                    <div class="info-box">
+                        <span class="label">ISBN</span>
+                        <span id="book-isbn" class="value">-</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Script de Lógica -->
+    <script src="js/book-details.js"></script>
 </body>
 </html>

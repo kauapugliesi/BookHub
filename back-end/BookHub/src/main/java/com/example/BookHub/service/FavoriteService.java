@@ -6,6 +6,7 @@ import com.example.BookHub.entity.User;
 import com.example.BookHub.repository.BookRepository;
 import com.example.BookHub.repository.FavoriteRepository;
 import com.example.BookHub.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +32,7 @@ public class FavoriteService {
         Book livro = bookRepository.findById(bookId)
                 .orElseThrow(() -> new RuntimeException("Livro não encontrado"));
 
-        boolean jaExiste = repository.findByUsuarioAndLivro(usuario,livro).isPresent();
+        boolean jaExiste = repository.findByUserAndBook(usuario,livro).isPresent();
 
         if(!jaExiste){
             Favorite favorito = new Favorite(livro,usuario);
@@ -40,18 +41,9 @@ public class FavoriteService {
         }
     }
 
-    public void removerFavorito(Long userId, Long bookId){
-        User usuario = userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
-
-        Book livro = bookRepository.findById(bookId)
-                .orElseThrow(() -> new RuntimeException("Livro não encontrado"));
-
-        boolean jaExiste = repository.findByUsuarioAndLivro(usuario,livro).isPresent();
-
-        if(jaExiste){
-            repository.deleteByUsuarioAndLivro(usuario,livro);
-        }
+    @Transactional
+    public void deleteFavorite(Long userId, Long bookId) {
+        repository.deleteByUser_IdAndBook_Id(userId, bookId);
     }
 
 
@@ -59,7 +51,7 @@ public class FavoriteService {
         User usuario = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 
-        return repository.findByUsuario(usuario);
+        return repository.findByUser(usuario);
     }
 
 }

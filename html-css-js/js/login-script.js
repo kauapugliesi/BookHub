@@ -39,6 +39,7 @@ event.preventDefault();
         resultMessage.style.color = "green";
         resultMessage.textContent = data.message 
 
+        localStorage.setItem("userId", data.id);
         localStorage.setItem("userName", data.nickame);
 
         setTimeout(() => {

@@ -5,15 +5,25 @@ if(userName){
     if(titleElement) titleElement.textContent = `Olá, ${userName}`;
 }
 
+
 const carouselStates = {};
 
+
 function criarCard(livro) {
+
+    const idSeguro = livro.id;
+
+    if (idSeguro == null) {
+        console.error("Livro sem ID:", livro);
+        return "";
+    }
+
     return `
-    <a href="book.html?id=${livro.id}">
+    <a href="book.html?id=${idSeguro}">
       <div class="book-card">
-        <img class="book-cover" src="${livro.capa}" alt="${livro.titulo}">
-        <h3 class="book-title">${livro.titulo}</h3>
-        <p class="book-rating">⭐ ${livro.avaliacao}</p>
+        <img class="book-cover" src="${livro.capa || livro.cover}" alt="${livro.titulo || livro.title}">
+        <h3 class="book-title">${livro.titulo || livro.title}</h3>
+        <p class="book-rating">⭐ ${livro.avaliacao || livro.rating}</p>
       </div>
     </a>
   `;
@@ -35,10 +45,7 @@ function moveCarousel(trackId, direction) {
     if (maxMove <= 0) return;
 
     const moveAmount = windowWidth * 0.8;
-    
-
     let newX = carouselStates[trackId].currentX - (direction * moveAmount);
-
 
     if (direction === 1 && Math.abs(carouselStates[trackId].currentX) >= maxMove) {
         newX = 0;
@@ -55,15 +62,25 @@ function moveCarousel(trackId, direction) {
 
 async function renderizarLivros() {
     try {
-               
         const response = await fetch("http://localhost:8080/books");
-           
-        livros = await response.json();
-          
-        livros.forEach((livro) => {
-            const container = document.getElementById(livro.categoria);
+        
+        if (!response.ok) {
+            throw new Error(`Erro na API: ${response.status}`);
+        }
+
+        const livros = await response.json();
+
+        const containers = document.querySelectorAll('.carousel-track');
+        containers.forEach(c => c.innerHTML = '');
+
+        livros.forEach((livro, index) => {
+            
+            const categoriaId = livro.categoria || livro.category;
+            const container = document.getElementById(categoriaId);
+            
             if(container){
-                container.innerHTML += criarCard(livro);
+                
+                container.innerHTML += criarCard(livro, index);
             }
         });
 
@@ -73,7 +90,7 @@ async function renderizarLivros() {
         }
 
     } catch(error){
-        console.error("Erro ao renderizar livros:", error);
+        console.error("Erro ao buscar livros da API:", error);
     }
 }
 

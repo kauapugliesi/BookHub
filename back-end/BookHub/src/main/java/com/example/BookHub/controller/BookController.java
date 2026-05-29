@@ -2,10 +2,7 @@ package com.example.BookHub.controller;
 
 import com.example.BookHub.entity.Book;
 import com.example.BookHub.service.BookService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +20,11 @@ public class BookController {
     @GetMapping
     public List<Book> listarLivros(){
         return bookService.listarLivro();
+    }
+
+    @GetMapping("/{id}")
+    public Book buscarPorId(@PathVariable Long id) {
+        return bookService.findbyId(id);
     }
 
 }
