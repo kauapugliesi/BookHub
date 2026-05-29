@@ -17,26 +17,36 @@ public class Book {
     @Column(name = "book_author")
     private String autor;
 
+    @Column(name = "book_description")
+    private String descricao;
+
     @Column(name = "book_cover")
     private String capa;
 
     @Column(name = "book_avaliation")
     private Double avaliacao;
 
+    @Column(name = "book_genre")
+    private String genero;
+
     @Column(name = "book_category")
     private String categoria;
+
+
 
     public Book(){
 
     }
 
-    public Book(Long id, String titulo, String autor, String capa, Double avaliacao, String categoria) {
+    public Book(Long id, String titulo, String autor, String capa, Double avaliacao, String categoria, String genero, String descricao) {
         Id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.capa = capa;
         this.avaliacao = avaliacao;
         this.categoria = categoria;
+        this.genero = genero;
+        this.descricao = descricao;
     }
 
     public Long getId() {
@@ -85,5 +95,21 @@ public class Book {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 }

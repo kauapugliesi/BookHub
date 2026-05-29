@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <title>BookHub</title>
 </head>
@@ -43,22 +43,46 @@
         </form>
 
         <h4 id="results-title">Todos os livros</h4>
-        <p id="results-subtitle">3 livros encontrados</p>
+        <p id="results-subtitle">Carregando livros...</p>
 
-        <h4 class="section-title">Mais Lidos</h4>   
-        <div class="section-divider"></div>
-        <section id="mais-famosos" class="main-session">
-        </section>
+        
+        <div class="carousel-container">
+            <h4 class="section-title">Mais Lidos</h4>   
+            <div class="section-divider"></div>
+            <div class="carousel-window">
+                <button class="carousel-btn prev" onclick="moveCarousel('mais-famosos', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+                <div id="mais-famosos" class="carousel-track">
+                    <!-- Livros inseridos via JS -->
+                </div>
+                <button class="carousel-btn next" onclick="moveCarousel('mais-famosos', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
 
-        <h4 class="section-title">Top da semana</h4>
-        <div class="section-divider"></div>
-        <section id="top-semana" class="main-session">
-        </section>
+        
+        <div class="carousel-container">
+            <h4 class="section-title">Top da semana</h4>
+            <div class="section-divider"></div>
+            <div class="carousel-window">
+                <button class="carousel-btn prev" onclick="moveCarousel('top-semana', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+                <div id="top-semana" class="carousel-track">
+                    <!-- Livros inseridos via JS -->
+                </div>
+                <button class="carousel-btn next" onclick="moveCarousel('top-semana', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
 
-        <h4 class="section-title">Com base nas suas leituras</h4>
-        <div class="section-divider"></div>
-        <section id="genero-comum" class="main-session" >
-        </section>
+        
+        <div class="carousel-container">
+            <h4 class="section-title">Com base nas suas leituras</h4>
+            <div class="section-divider"></div>
+            <div class="carousel-window">
+                <button class="carousel-btn prev" onclick="moveCarousel('genero-comum', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+                <div id="genero-comum" class="carousel-track" >
+                    
+                </div>
+                <button class="carousel-btn next" onclick="moveCarousel('genero-comum', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
 
 
     </main>
