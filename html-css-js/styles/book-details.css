@@ -13,7 +13,7 @@ body {
     color: #333;
 }
 
-/* Sidebar (Padrão BookHub) */
+
 .side-bar {
     display: flex;
     position: fixed;
@@ -25,18 +25,18 @@ body {
     box-shadow: 2px 0 10px rgba(0,0,0,0.1);
 }
 
-#side-title {
-    padding: 30px 0 5px 30px;
-    color: white;
-    font-size: 26px;
-    font-weight: 800;
-    letter-spacing: -1px;
+#side-title{
+    padding: 25px 0px 5px 25px;
+    color: #1E3A8A;
+    font-size: 24px;
+    font-weight: 750;
 }
 
-#side-subtitle {
-    padding-left: 30px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 13px;
+
+#side-subtitle{
+    padding-left: 25px;
+    color: rgba(255, 255, 255, 0.856);
+    font-size: small;
 }
 
 nav {
@@ -78,7 +78,7 @@ nav ul {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Container Principal */
+
 .book-details-container {
     margin-left: 280px;
     width: calc(100% - 280px);
@@ -107,7 +107,7 @@ nav ul {
     transform: translateX(-8px);
 }
 
-/* Layout de Conteúdo */
+
 .book-content {
     display: grid;
     grid-template-columns: 320px 1fr;
@@ -121,7 +121,7 @@ nav ul {
     opacity: 0;
 }
 
-/* Coluna da Capa */
+
 .book-visual {
     display: flex;
     flex-direction: column;
@@ -182,7 +182,7 @@ nav ul {
     transform: translateY(-2px);
 }
 
-/* Coluna de Informações */
+
 .book-info #title {
     font-size: 42px;
     color: #1a1a1a;
@@ -261,7 +261,7 @@ nav ul {
     font-size: 15px;
 }
 
-/* Loading Spinner Overlay */
+
 .loading-overlay {
     position: fixed;
     inset: 0;
@@ -293,7 +293,7 @@ nav ul {
     transform: scale(1.1);
 }
 
-/* Responsividade Básica */
+
 @media (max-width: 992px) {
     .book-content {
         grid-template-columns: 1fr;
